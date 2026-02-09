@@ -1,0 +1,11 @@
+services:
+  build-wasm:
+    # use below commented line if you built the base WASM image on your local. Building this image takes 10 minutes.
+    # image: build-wasm-image:latest
+    image: wchinthakaps/build-wasm-image:2.0.0
+    container_name: build-wasm
+    volumes:
+      - ../../:/project
+    ports:
+      - 8000:8000
+    entrypoint: /project/platforms/wasm/entrypoint.sh

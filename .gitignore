@@ -1,0 +1,8 @@
+*.exe
+*.log
+.DS_Store
+build/*
+!build/*/hashtable.o
+logs/
+.vscode/
+.vs/

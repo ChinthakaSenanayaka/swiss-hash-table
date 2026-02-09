@@ -1,0 +1,9 @@
+services:
+  build-riscv:
+    # use below commented line if you built the base RISCV image on your local. Building this image takes 3 hours.
+    # image: build-riscv-image:latest
+    image: wchinthakaps/build-riscv-image:2.0.0
+    container_name: build-riscv
+    volumes:
+      - ../../:/project
+    entrypoint: /project/platforms/riscv/entrypoint.sh

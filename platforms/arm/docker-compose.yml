@@ -1,0 +1,9 @@
+services:
+  build-arm:
+    # use below commented line if you built the base ARM image on your local. Building this image takes 1 hour.
+    # image: build-arm-image:latest
+    image: wchinthakaps/build-arm-image:2.0.0
+    container_name: build-arm
+    volumes:
+      - ../../:/project
+    entrypoint: /project/platforms/arm/entrypoint.sh
