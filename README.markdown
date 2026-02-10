@@ -49,13 +49,11 @@ Follow the below steps.
         `RISCV` are also supported.
 
 ``` python
-%%bash
 chmod 777 ./test/C/bdd/run_c.sh
 ./test/C/bdd/run_c.sh INTEL
 ```
 
 ``` python
-%%bash
 chmod 777 ./perf/scripts/c/install-wasm.sh
 ./perf/scripts/c/install-wasm.sh
 
@@ -64,7 +62,6 @@ chmod 777 ./test/C/bdd/run_c.sh
 ```
 
 ``` python
-%%cmd
 test\C\bdd\run_c.bat
 ```
 
@@ -134,7 +131,6 @@ test\C\bdd\run_c.bat
 ##### 2.3.1 Windows:
 
 ``` python
-%%cmd
 perf\scripts\run.bat
 ```
 
@@ -148,7 +144,6 @@ different for Mac OS. Please refer Abseil documentation for more
 information.
 
 ``` python
-%%bash
 chmod 777 ./perf/scripts/cpp/build-yum.sh
 ./perf/scripts/cpp/build-yum.sh
 # chmod 777 ./perf/scripts/cpp/build.sh
@@ -162,7 +157,6 @@ chmod 777 ./perf/scripts/cpp/build-yum.sh
         supported.
 
 ``` python
-%%bash
 chmod 777 ./perf/scripts/run.sh
 ./perf/scripts/run.sh INTEL
 ```
@@ -172,7 +166,6 @@ chmod 777 ./perf/scripts/run.sh
     Linux/Ubuntu OS.
 
 ``` python
-%%bash
 chmod 777 ./perf/scripts/c/install-wasm.sh
 ./perf/scripts/c/install-wasm.sh
 
@@ -190,7 +183,6 @@ chmod 777 ./perf/scripts/run.sh
     -   Host used for testing is `ada.cas.mcmaster.ca`
 
 ``` python
-%%bash
 scp -r <username>@<host>:<base path>/swiss-hash-table/perf/charts/ .
 ```
 
@@ -225,12 +217,10 @@ scp -r <username>@<host>:<base path>/swiss-hash-table/perf/charts/ .
 -   Below commands for generating C object files.
 
 ``` python
-%%cmd
 gcc -msse2 -DENV=1 -c src\C\hashtable\impl\SwissHashTable.c -o build\intel\hashtable.o
 ```
 
 ``` python
-%%bash
 gcc -msse2 -DENV=1 -c ./src/C/hashtable/impl/SwissHashTable.c -o ./build/intel/hashtable.o
 emcc -fPIC -Wno-implicit-function-declaration -msse2 -msimd128 -DENV=2 -c ./src/C/hashtable/impl/SwissHashTable.c -o ./build/wasm/hashtable.o
 arm-none-eabi-gcc -mfloat-abi=softfp -mfpu=neon --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lm -lrdimon -Wl,--end-group -DENV=3 -c ./src/C/hashtable/impl/SwissHashTable.c -o ./build/arm/hashtable.o
@@ -244,7 +234,6 @@ riscv64-unknown-elf-gcc -O2 -march=rv64gcv -DENV=4 -c ./src/C/hashtable/impl/Swi
     processor environments
 
 ``` python
-%%bash
 ./platforms/intel/run.sh
 ./platforms/wasm/run.sh
 ./platforms/arm/run.sh
@@ -252,7 +241,6 @@ riscv64-unknown-elf-gcc -O2 -march=rv64gcv -DENV=4 -c ./src/C/hashtable/impl/Swi
 ```
 
 ``` python
-%%cmd
 platforms\intel\run.bat
 platforms\wasm\run.bat
 platforms\arm\run.bat
@@ -261,12 +249,10 @@ platforms\riscv\run.bat
 
 ### 4 Optional: Run the Assembly (NASM) Swiss hash table project
 
-``` python
-%%bash
+``` pytho
 ./src/ASM/run_asm.sh
 ```
 
 ``` python
-%%cmd
 src\ASM\run_asm.bat
 ```
